@@ -1,0 +1,15 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: service-turbine
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8760/eureka/,http://peer3:8759/eureka/
+
+turbine:
+  app-config: service-consumer
+  cluster-name-expression: new String("default")
+  combine-host-port: true
